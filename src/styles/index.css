@@ -1,0 +1,547 @@
+/* ========================================
+   T&F Soluciones Informáticas - Global Styles
+   Light Theme (Default) + Dark Theme Support
+   ======================================== */
+
+@import './variables.css';
+@import './reset.css';
+@import './animations.css';
+
+/* ===== BASE STYLES ===== */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family-body);
+    font-size: var(--text-base);
+    color: var(--color-text-primary);
+    background-color: var(--color-background);
+    overflow-x: hidden;
+    transition: background-color var(--duration-normal) var(--easing-default),
+        color var(--duration-normal) var(--easing-default);
+}
+
+/* ===== TYPOGRAPHY ===== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-family-heading);
+    font-weight: var(--font-bold);
+    color: var(--color-text-primary);
+}
+
+h1 {
+    font-size: var(--text-5xl);
+    line-height: var(--leading-none);
+    letter-spacing: -0.02em;
+}
+
+h2 {
+    font-size: var(--text-4xl);
+    line-height: var(--leading-tight);
+    letter-spacing: -0.01em;
+}
+
+h3 {
+    font-size: var(--text-3xl);
+    line-height: var(--leading-tight);
+}
+
+h4 {
+    font-size: var(--text-2xl);
+    line-height: var(--leading-snug);
+}
+
+h5 {
+    font-size: var(--text-xl);
+    line-height: var(--leading-snug);
+}
+
+h6 {
+    font-size: var(--text-lg);
+    line-height: var(--leading-normal);
+}
+
+p {
+    color: var(--color-text-secondary);
+    line-height: var(--leading-relaxed);
+}
+
+.lead {
+    font-size: var(--text-xl);
+    color: var(--color-text-secondary);
+    line-height: var(--leading-relaxed);
+}
+
+/* ===== LINKS ===== */
+
+a {
+    color: var(--color-primary-600);
+    transition: color var(--duration-fast) var(--easing-default);
+}
+
+a:hover {
+    color: var(--color-primary-700);
+}
+
+[data-theme="dark"] a {
+    color: var(--color-primary-400);
+}
+
+[data-theme="dark"] a:hover {
+    color: var(--color-primary-300);
+}
+
+/* ===== CONTAINER ===== */
+
+.container {
+    width: 100%;
+    max-width: var(--container-xl);
+    margin: 0 auto;
+    padding: 0 var(--space-6);
+}
+
+@media (min-width: 768px) {
+    .container {
+        padding: 0 var(--space-8);
+    }
+}
+
+@media (min-width: 1280px) {
+    .container {
+        padding: 0 var(--space-10);
+    }
+}
+
+/* ===== SECTION ===== */
+
+.section {
+    padding: var(--space-20) 0;
+    position: relative;
+}
+
+@media (min-width: 768px) {
+    .section {
+        padding: var(--space-32) 0;
+    }
+}
+
+.section-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto var(--space-16);
+}
+
+.section-header h2 {
+    margin-bottom: var(--space-4);
+}
+
+.section-header p {
+    font-size: var(--text-lg);
+}
+
+/* ===== GLASSMORPHISM ===== */
+
+.glass {
+    background: var(--glass-background);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid var(--glass-border);
+}
+
+.glass-card {
+    background: var(--gradient-card);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-card);
+}
+
+/* ===== GRADIENT BACKGROUNDS ===== */
+
+.bg-gradient-hero {
+    background: var(--gradient-hero);
+}
+
+.bg-gradient-glow {
+    position: relative;
+}
+
+.bg-gradient-glow::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 1200px;
+    height: 600px;
+    background: var(--gradient-glow);
+    pointer-events: none;
+    z-index: var(--z-behind);
+}
+
+/* ===== GRID BACKGROUND ===== */
+
+.grid-background {
+    background-image:
+        linear-gradient(var(--color-primary-100) 1px, transparent 1px),
+        linear-gradient(90deg, var(--color-primary-100) 1px, transparent 1px);
+    background-size: 60px 60px;
+    background-position: center center;
+    opacity: 0.5;
+}
+
+[data-theme="dark"] .grid-background {
+    background-image:
+        linear-gradient(rgba(99, 102, 241, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(99, 102, 241, 0.05) 1px, transparent 1px);
+    opacity: 1;
+}
+
+/* ===== GRADIENT ORBS ===== */
+
+.gradient-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.15;
+    pointer-events: none;
+    animation: orbFloat 20s ease-in-out infinite;
+}
+
+[data-theme="dark"] .gradient-orb {
+    opacity: 0.3;
+}
+
+.gradient-orb-primary {
+    background: var(--color-primary-500);
+}
+
+.gradient-orb-secondary {
+    background: var(--color-secondary-500);
+}
+
+/* ===== SKIP LINK ===== */
+
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--color-primary-600);
+    color: white;
+    padding: var(--space-3) var(--space-6);
+    border-radius: var(--radius-md);
+    z-index: var(--z-notification);
+    transition: top var(--duration-normal) var(--easing-out);
+    font-weight: var(--font-medium);
+}
+
+.skip-link:focus {
+    top: var(--space-4);
+}
+
+/* ===== APP WRAPPER ===== */
+
+.app {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    flex: 1;
+    padding-top: var(--header-height);
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        padding-top: var(--header-height-mobile);
+    }
+}
+
+/* ===== UTILITY CLASSES ===== */
+
+/* Text alignment */
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+/* Flex utilities */
+.flex {
+    display: flex;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.items-start {
+    align-items: flex-start;
+}
+
+.items-end {
+    align-items: flex-end;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.justify-start {
+    justify-content: flex-start;
+}
+
+.justify-end {
+    justify-content: flex-end;
+}
+
+.gap-1 {
+    gap: var(--space-1);
+}
+
+.gap-2 {
+    gap: var(--space-2);
+}
+
+.gap-3 {
+    gap: var(--space-3);
+}
+
+.gap-4 {
+    gap: var(--space-4);
+}
+
+.gap-6 {
+    gap: var(--space-6);
+}
+
+.gap-8 {
+    gap: var(--space-8);
+}
+
+/* Grid utilities */
+.grid {
+    display: grid;
+}
+
+/* Visibility */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Spacing */
+.mt-auto {
+    margin-top: auto;
+}
+
+.mb-auto {
+    margin-bottom: auto;
+}
+
+.ml-auto {
+    margin-left: auto;
+}
+
+.mr-auto {
+    margin-right: auto;
+}
+
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Width */
+.w-full {
+    width: 100%;
+}
+
+.max-w-none {
+    max-width: none;
+}
+
+/* Responsive visibility */
+@media (max-width: 768px) {
+    .hide-mobile {
+        display: none !important;
+    }
+}
+
+@media (min-width: 769px) {
+    .hide-desktop {
+        display: none !important;
+    }
+}
+
+/* ===== FORM STYLES ===== */
+
+.form-group {
+    margin-bottom: var(--space-6);
+}
+
+.form-label {
+    display: block;
+    font-weight: var(--font-medium);
+    margin-bottom: var(--space-2);
+    color: var(--color-text-primary);
+}
+
+.form-input,
+.form-textarea,
+.form-select {
+    width: 100%;
+    padding: var(--space-4);
+    background: var(--color-background);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    color: var(--color-text-primary);
+    font-size: var(--text-base);
+    transition: border-color var(--duration-fast) var(--easing-default),
+        box-shadow var(--duration-fast) var(--easing-default);
+}
+
+.form-input:focus,
+.form-textarea:focus,
+.form-select:focus {
+    outline: none;
+    border-color: var(--color-primary-500);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+    color: var(--color-text-muted);
+}
+
+.form-textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+.form-error {
+    color: var(--color-error);
+    font-size: var(--text-sm);
+    margin-top: var(--space-2);
+}
+
+/* ===== BADGE ===== */
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-4);
+    background: var(--color-primary-50);
+    border: 1px solid var(--color-primary-200);
+    border-radius: var(--radius-full);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    color: var(--color-primary-700);
+}
+
+[data-theme="dark"] .badge {
+    background: rgba(99, 102, 241, 0.1);
+    border-color: rgba(99, 102, 241, 0.3);
+    color: var(--color-primary-300);
+}
+
+.badge-secondary {
+    background: var(--color-secondary-50);
+    border-color: var(--color-secondary-200);
+    color: var(--color-secondary-700);
+}
+
+[data-theme="dark"] .badge-secondary {
+    background: rgba(20, 184, 166, 0.1);
+    border-color: rgba(20, 184, 166, 0.3);
+    color: var(--color-secondary-300);
+}
+
+/* ===== DIVIDER ===== */
+
+.divider {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg,
+            transparent,
+            var(--color-border),
+            transparent);
+    margin: var(--space-8) 0;
+}
+
+/* ===== LOADING SPINNER ===== */
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid var(--color-surface-2);
+    border-top-color: var(--color-primary-500);
+    border-radius: 50%;
+    animation: rotate 0.8s linear infinite;
+}
+
+.spinner-sm {
+    width: 20px;
+    height: 20px;
+    border-width: 2px;
+}
+
+.spinner-lg {
+    width: 60px;
+    height: 60px;
+    border-width: 4px;
+}
+
+/* ===== TEXT GRADIENT ===== */
+
+.text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.text-gradient-animated {
+    background: var(--gradient-text);
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: gradientShift 4s ease infinite;
+}
