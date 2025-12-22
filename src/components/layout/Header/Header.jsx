@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import Button from '../../common/Button';
 import ThemeToggle from '../../common/ThemeToggle';
+import Logo from '../../common/Logo';
 import './Header.css';
 
 const navigation = [
@@ -61,7 +62,7 @@ const Header = () => {
             <nav className="header-nav container">
                 {/* Logo */}
                 <Link to="/" className="header-logo">
-                    <img src="/logo.svg" alt="T&F Soluciones Informáticas" className="logo-image" />
+                    <Logo />
                 </Link>
 
                 {/* Desktop Navigation */}

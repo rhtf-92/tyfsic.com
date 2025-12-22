@@ -8,6 +8,7 @@ import {
     Building
 } from 'lucide-react';
 import Card from '../../components/common/Card';
+import { TeamIllustration } from '../../components/common/Illustrations';
 import './About.css';
 
 const values = [
@@ -64,18 +65,28 @@ const About = () => {
                     <div className="gradient-orb gradient-orb-primary" style={{ top: '-100px', right: '-100px', width: '400px', height: '400px' }} />
                 </div>
                 <div className="container">
-                    <motion.div
-                        className="page-hero-content"
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6 }}
-                    >
-                        <h1>Sobre Nosotros</h1>
-                        <p className="lead">
-                            Más de una década impulsando la transformación digital de
-                            empresas e instituciones educativas en el Perú.
-                        </p>
-                    </motion.div>
+                    <div className="about-hero-grid">
+                        <motion.div
+                            className="page-hero-content"
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6 }}
+                        >
+                            <h1>Sobre Nosotros</h1>
+                            <p className="lead">
+                                Más de una década impulsando la transformación digital de
+                                empresas e instituciones educativas en el Perú.
+                            </p>
+                        </motion.div>
+                        <motion.div
+                            className="about-hero-illustration"
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ duration: 0.8, delay: 0.2 }}
+                        >
+                            <TeamIllustration size={350} className="illustration-float" />
+                        </motion.div>
+                    </div>
                 </div>
             </section>
 

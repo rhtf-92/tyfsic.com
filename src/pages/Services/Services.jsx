@@ -11,6 +11,7 @@ import {
 } from 'lucide-react';
 import Button from '../../components/common/Button';
 import Card from '../../components/common/Card';
+import { WebDevelopmentIllustration } from '../../components/common/Illustrations';
 import './Services.css';
 
 const services = [
@@ -146,18 +147,28 @@ const Services = () => {
                     <div className="gradient-orb gradient-orb-primary" style={{ top: '-100px', right: '-100px', width: '400px', height: '400px' }} />
                 </div>
                 <div className="container">
-                    <motion.div
-                        className="page-hero-content"
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6 }}
-                    >
-                        <h1>Nuestros Servicios</h1>
-                        <p className="lead">
-                            Soluciones tecnológicas integrales diseñadas para impulsar
-                            el crecimiento y la eficiencia de tu organización.
-                        </p>
-                    </motion.div>
+                    <div className="services-hero-grid">
+                        <motion.div
+                            className="page-hero-content"
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6 }}
+                        >
+                            <h1>Nuestros Servicios</h1>
+                            <p className="lead">
+                                Soluciones tecnológicas integrales diseñadas para impulsar
+                                el crecimiento y la eficiencia de tu organización.
+                            </p>
+                        </motion.div>
+                        <motion.div
+                            className="services-hero-illustration"
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ duration: 0.8, delay: 0.2 }}
+                        >
+                            <WebDevelopmentIllustration size={380} className="illustration-float" />
+                        </motion.div>
+                    </div>
                 </div>
             </section>
 

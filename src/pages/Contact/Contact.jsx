@@ -9,12 +9,14 @@ import {
     CheckCircle
 } from 'lucide-react';
 import Button from '../../components/common/Button';
+import { SupportIllustration } from '../../components/common/Illustrations';
 import './Contact.css';
 
 const contactInfo = [
-    { icon: Mail, label: 'Email', value: 'contacto@tyfsic.com', href: 'mailto:contacto@tyfsic.com' },
-    { icon: Phone, label: 'Teléfono', value: '+51 999 999 999', href: 'tel:+51999999999' },
-    { icon: MapPin, label: 'Dirección', value: 'Lima, Perú', href: null },
+    { icon: Mail, label: 'Email', value: 'tyfsic@gmail.com', href: 'mailto:tyfsic@gmail.com' },
+    { icon: Phone, label: 'Teléfono', value: '+51 993 975 609', href: 'tel:+51993975609' },
+    { icon: Phone, label: 'WhatsApp', value: '+51 993 975 609', href: 'https://wa.me/51993975609' },
+    { icon: MapPin, label: 'Dirección', value: 'Jr. 28 de julio 1523-Dpto 402, Huánuco, Perú', href: null },
     { icon: Clock, label: 'Horario', value: 'Lun - Vie: 9:00 - 18:00', href: null },
 ];
 
@@ -107,18 +109,28 @@ const Contact = () => {
                     <div className="gradient-orb gradient-orb-primary" style={{ top: '-100px', right: '-100px', width: '400px', height: '400px' }} />
                 </div>
                 <div className="container">
-                    <motion.div
-                        className="page-hero-content"
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6 }}
-                    >
-                        <h1>Contáctanos</h1>
-                        <p className="lead">
-                            Estamos listos para ayudarte a transformar tu negocio.
-                            Cuéntanos sobre tu proyecto.
-                        </p>
-                    </motion.div>
+                    <div className="contact-hero-grid">
+                        <motion.div
+                            className="page-hero-content"
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6 }}
+                        >
+                            <h1>Contáctanos</h1>
+                            <p className="lead">
+                                Estamos listos para ayudarte a transformar tu negocio.
+                                Cuéntanos sobre tu proyecto.
+                            </p>
+                        </motion.div>
+                        <motion.div
+                            className="contact-hero-illustration"
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ duration: 0.8, delay: 0.2 }}
+                        >
+                            <SupportIllustration size={340} className="illustration-float" />
+                        </motion.div>
+                    </div>
                 </div>
             </section>
 
@@ -161,7 +173,7 @@ const Contact = () => {
 
                             <div className="contact-cta">
                                 <p>¿Prefieres una llamada?</p>
-                                <Button href="tel:+51999999999" variant="outline" icon={<Phone size={18} />}>
+                                <Button href="tel:+51993975609" variant="outline" icon={<Phone size={18} />}>
                                     Llámanos ahora
                                 </Button>
                             </div>

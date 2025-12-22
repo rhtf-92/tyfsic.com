@@ -1,0 +1,30 @@
+.logo {
+    height: 45px;
+    width: auto;
+}
+
+/* Main text - inherits from theme */
+.logo-text {
+    fill: var(--color-text-primary);
+    transition: fill var(--duration-fast) var(--easing-default);
+}
+
+/* Subtext - always gradient purple */
+.logo-subtext {
+    fill: var(--color-primary-500);
+}
+
+/* Dark mode adjustments */
+[data-theme="dark"] .logo-text {
+    fill: #f8fafc;
+}
+
+[data-theme="dark"] .logo-subtext {
+    fill: var(--color-primary-400);
+}
+
+@media (max-width: 768px) {
+    .logo {
+        height: 38px;
+    }
+}

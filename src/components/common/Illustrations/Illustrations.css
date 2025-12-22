@@ -1,0 +1,19 @@
+.illustration {
+    max-width: 100%;
+    height: auto;
+}
+
+.illustration-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+.illustration-center {
+    display: block;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .illustration {
+        max-width: 250px;
+    }
+}

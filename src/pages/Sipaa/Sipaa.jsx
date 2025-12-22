@@ -17,6 +17,7 @@ import {
 } from 'lucide-react';
 import Button from '../../components/common/Button';
 import Card from '../../components/common/Card';
+import { AnalyticsIllustration } from '../../components/common/Illustrations';
 import './Sipaa.css';
 
 const features = [
@@ -171,25 +172,36 @@ const Sipaa = () => {
                         <p>Diseñado para optimizar cada aspecto de la gestión educativa.</p>
                     </motion.div>
 
-                    <motion.div
-                        className="features-grid"
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true }}
-                        variants={containerVariants}
-                    >
-                        {features.map((feature, index) => (
-                            <motion.div key={index} variants={itemVariants}>
-                                <Card variant="glass" padding="lg" className="feature-card">
-                                    <div className="feature-icon">
-                                        <feature.icon size={28} />
-                                    </div>
-                                    <h4>{feature.title}</h4>
-                                    <p>{feature.description}</p>
-                                </Card>
-                            </motion.div>
-                        ))}
-                    </motion.div>
+                    <div className="features-with-illustration">
+                        <motion.div
+                            className="features-grid"
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true }}
+                            variants={containerVariants}
+                        >
+                            {features.map((feature, index) => (
+                                <motion.div key={index} variants={itemVariants}>
+                                    <Card variant="glass" padding="lg" className="feature-card">
+                                        <div className="feature-icon">
+                                            <feature.icon size={28} />
+                                        </div>
+                                        <h4>{feature.title}</h4>
+                                        <p>{feature.description}</p>
+                                    </Card>
+                                </motion.div>
+                            ))}
+                        </motion.div>
+                        <motion.div
+                            className="features-illustration"
+                            initial={{ opacity: 0, x: 30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6 }}
+                        >
+                            <AnalyticsIllustration size={400} className="illustration-float" />
+                        </motion.div>
+                    </div>
                 </div>
             </section>
 

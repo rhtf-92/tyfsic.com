@@ -13,6 +13,7 @@ import {
 } from 'lucide-react';
 import Button from '../../components/common/Button';
 import Card from '../../components/common/Card';
+import { CloudSolutionsIllustration } from '../../components/common/Illustrations';
 import './Home.css';
 
 const stats = [
@@ -352,23 +353,34 @@ const Home = () => {
             {/* CTA Section */}
             <section className="section cta-section">
                 <div className="container">
-                    <motion.div
-                        className="cta-content"
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6 }}
-                    >
-                        <div className="cta-glow" />
-                        <h2>¿Listo para transformar tu negocio?</h2>
-                        <p>
-                            Contáctanos hoy y descubre cómo podemos ayudarte a alcanzar
-                            tus objetivos tecnológicos.
-                        </p>
-                        <Button href="/contacto" size="lg" icon={<ArrowRight />} iconPosition="right">
-                            Agendar Consulta Gratuita
-                        </Button>
-                    </motion.div>
+                    <div className="cta-grid">
+                        <motion.div
+                            className="cta-content"
+                            initial={{ opacity: 0, scale: 0.95 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6 }}
+                        >
+                            <div className="cta-glow" />
+                            <h2>¿Listo para transformar tu negocio?</h2>
+                            <p>
+                                Contáctanos hoy y descubre cómo podemos ayudarte a alcanzar
+                                tus objetivos tecnológicos.
+                            </p>
+                            <Button href="/contacto" size="lg" icon={<ArrowRight />} iconPosition="right">
+                                Agendar Consulta Gratuita
+                            </Button>
+                        </motion.div>
+                        <motion.div
+                            className="cta-illustration"
+                            initial={{ opacity: 0, x: 30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6, delay: 0.2 }}
+                        >
+                            <CloudSolutionsIllustration size={350} className="illustration-float" />
+                        </motion.div>
+                    </div>
                 </div>
             </section>
         </motion.div>

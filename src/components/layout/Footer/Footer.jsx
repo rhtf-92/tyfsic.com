@@ -3,19 +3,22 @@ import {
     Facebook,
     Linkedin,
     Instagram,
+    Twitter,
+    Youtube,
     Mail,
     Phone,
     MapPin,
+    Clock,
     ArrowUpRight
 } from 'lucide-react';
 import './Footer.css';
 
 const footerLinks = {
     servicios: [
-        { name: 'Desarrollo Web a Medida', href: '/servicios#desarrollo-web' },
-        { name: 'Soluciones Informáticas', href: '/servicios#soluciones' },
-        { name: 'Consultoría TI', href: '/servicios#consultoria' },
-        { name: 'Soporte Técnico', href: '/servicios#soporte' },
+        { name: 'Desarrollo Web a Medida', href: '/servicios/desarrollo-web' },
+        { name: 'Soluciones Informáticas', href: '/servicios/soluciones-informaticas' },
+        { name: 'Consultoría TI', href: '/servicios/consultoria-ti' },
+        { name: 'Soporte Técnico', href: '/servicios/soporte-tecnico' },
     ],
     sipaa: [
         { name: 'Características', href: '/sipaa#caracteristicas' },
@@ -26,15 +29,17 @@ const footerLinks = {
     empresa: [
         { name: 'Nosotros', href: '/nosotros' },
         { name: 'Clientes', href: '/nosotros#clientes' },
-        { name: 'Blog', href: '/blog' },
         { name: 'Contacto', href: '/contacto' },
     ],
 };
 
+// Social links - URLs pending
 const socialLinks = [
-    { name: 'Facebook', icon: Facebook, href: 'https://facebook.com/tyfsic' },
-    { name: 'LinkedIn', icon: Linkedin, href: 'https://linkedin.com/company/tyfsic' },
-    { name: 'Instagram', icon: Instagram, href: 'https://instagram.com/tyfsic' },
+    { name: 'Facebook', icon: Facebook, href: '#' },
+    { name: 'LinkedIn', icon: Linkedin, href: '#' },
+    { name: 'Instagram', icon: Instagram, href: '#' },
+    { name: 'Twitter', icon: Twitter, href: '#' },
+    { name: 'YouTube', icon: Youtube, href: '#' },
 ];
 
 const Footer = () => {
@@ -53,20 +58,33 @@ const Footer = () => {
                         </Link>
                         <p className="footer-description">
                             Tu socio tecnológico de confianza. Más de 10 años impulsando la
-                            transformación digital de empresas e instituciones educativas.
+                            transformación digital de empresas e instituciones educativas en Perú.
                         </p>
                         <div className="footer-contact">
-                            <a href="mailto:contacto@tyfsic.com" className="contact-item">
+                            <a href="mailto:tyfsic@gmail.com" className="contact-item">
                                 <Mail size={18} />
-                                <span>contacto@tyfsic.com</span>
+                                <span>tyfsic@gmail.com</span>
                             </a>
-                            <a href="tel:+51999999999" className="contact-item">
+                            <a href="tel:+51993975609" className="contact-item">
                                 <Phone size={18} />
-                                <span>+51 999 999 999</span>
+                                <span>+51 993 975 609</span>
+                            </a>
+                            <a
+                                href="https://wa.me/51993975609"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="contact-item whatsapp"
+                            >
+                                <Phone size={18} />
+                                <span>WhatsApp</span>
                             </a>
                             <div className="contact-item">
                                 <MapPin size={18} />
-                                <span>Lima, Perú</span>
+                                <span>Jr. 28 de julio 1523-Dpto 402, Huánuco, Perú</span>
+                            </div>
+                            <div className="contact-item">
+                                <Clock size={18} />
+                                <span>Lun - Vie: 9:00 - 18:00</span>
                             </div>
                         </div>
                     </div>
@@ -135,10 +153,9 @@ const Footer = () => {
                             <a
                                 key={social.name}
                                 href={social.href}
-                                target="_blank"
-                                rel="noopener noreferrer"
                                 className="social-link"
                                 aria-label={social.name}
+                                title={`${social.name} - Próximamente`}
                             >
                                 <social.icon size={20} />
                             </a>
