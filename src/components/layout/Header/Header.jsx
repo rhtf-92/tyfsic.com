@@ -61,8 +61,7 @@ const Header = () => {
             <nav className="header-nav container">
                 {/* Logo */}
                 <Link to="/" className="header-logo">
-                    <span className="logo-text">T&F</span>
-                    <span className="logo-subtext">Soluciones Informáticas</span>
+                    <img src="/logo.svg" alt="T&F Soluciones Informáticas" className="logo-image" />
                 </Link>
 
                 {/* Desktop Navigation */}
