@@ -8,7 +8,7 @@ set -e  # Exit on any error
 # Configuration
 SSH_KEY="../ssh-key-aws/plataforma_sipaa.pem"
 SERVER_USER="tyfsic"
-SERVER_IP="54.196.199.68"
+SERVER_IP="44.192.65.175"
 REMOTE_PATH="/var/www/tyfsic.com"
 
 # Colors for output
