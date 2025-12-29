@@ -7,6 +7,7 @@ set -e  # Exit on any error
 
 # Configuration
 SSH_KEY="../ssh-key-aws/plataforma_sipaa.pem"
+SSH_PORT="22222"
 SERVER_USER="tyfsic"
 SERVER_IP="44.192.65.175"
 REMOTE_PATH="/var/www/tyfsic.com"
@@ -40,13 +41,13 @@ echo ""
 
 # Step 4: Deploy to server
 echo -e "${YELLOW}📤 Step 4: Uploading to server...${NC}"
-scp -i "$SSH_KEY" -r dist/* ${SERVER_USER}@${SERVER_IP}:${REMOTE_PATH}/
+scp -i "$SSH_KEY" -P $SSH_PORT -r dist/* ${SERVER_USER}@${SERVER_IP}:${REMOTE_PATH}/
 echo -e "${GREEN}✓ Files uploaded${NC}"
 echo ""
 
 # Step 5: Verify deployment
 echo -e "${YELLOW}🔍 Step 5: Verifying deployment...${NC}"
-ssh -i "$SSH_KEY" ${SERVER_USER}@${SERVER_IP} "ls -la ${REMOTE_PATH}/ | head -10"
+ssh -i "$SSH_KEY" -p $SSH_PORT ${SERVER_USER}@${SERVER_IP} "ls -la ${REMOTE_PATH}/ | head -10"
 echo ""
 
 echo -e "${GREEN}============================================${NC}"
